@@ -1,33 +1,47 @@
 ; GLOBAL
 ;-------
+; VARIABLES
+;----------
+LNK := "C:\shortcuts"
+X86 := "C:\Program Files (x86)"
+ALOCAL := "C:\Users\669385\AppData\Local"
+TCMD := "C:\totalcmd"
+;
+
 ; LAUNCH CHROME
 #w::
-Run, "C:\Program Files (x86)\Google\Chrome\Application\chrome.exe"
+run, "%X86%\Google\Chrome\Application\chrome.exe"
+WinActivate
 return
 
 ; LAUNCH TOTAL COMMANDER
 #q::
-Run, "C:\totalcmd\TOTALCMD64.EXE"
+Run, "%TCMD%\TOTALCMD64.EXE"
+WinActivate
 return
 
 ; LAUNCH DISCORD
 #d::
-Run, "C:\Users\669385\AppData\Local\Discord\Update.exe --processStart Discord.exe"
+Run, C:\Users\669385\AppData\Local\Discord\Update.exe --processStart Discord.exe
+WinActivate
 return
 
 ; LAUNCH WSL
 #z::
-Run, "C:\shortcuts\Ubuntu.lnk"
+Run, "%LNK%\Ubuntu.lnk"
+WinActivate
 return
 
 ; LAUNCH SNIPPING TOOL
 #s::
-Run, "C:\shortcuts\Snipping Tool.lnk"
+Run, "%LNK%\Snipping Tool.lnk"
+WinActivate
 return
 
 ; LAUNCH NOTEPAD++
 >!n::
-Run, "C:\Program Files (x86)\Notepad++\notepad++.exe"
+WinActivate
+Run, "%X86%\Notepad++\notepad++.exe"
 
 ; SUSPEND
 Shift & End::
@@ -83,3 +97,29 @@ return
 Send, ^+n
 return
 }
+
+; KEYS
+;-------
+; LBUTTON - Left Click
+; RBUTTON - Right Click
+; MBUTTON - Scroll Click
+; WHEELUP - Scroll Up
+; WHEELDOWN - Scroll Down
+; CapsLock - CapsLock
+; Space - Space
+; Tab - Tab
+; Enter - Enter
+; Esc - Escape
+; Backspace - Backspace
+; LWin - Left Windows
+; RWin - Right Windows
+; LAlt - Left Alt
+; RAlt - Right Alt
+; LShift - Left Shift
+; RShift - Right Shift
+; LCtrl - Left Control
+; RCtrl - Right Control
+; + - Shift Modifier
+; ^ - Ctrl Modifier
+; # - Windows
+; ! - Alt Modifier
