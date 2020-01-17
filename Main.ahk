@@ -44,7 +44,7 @@ WinActivate
 Run, "%X86%\Notepad++\notepad++.exe"
 
 ; SUSPEND
-Shift & End::
+!+Esc::
 Suspend
 return
 
