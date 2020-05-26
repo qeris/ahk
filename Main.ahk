@@ -1,51 +1,26 @@
-; GLOBAL
-;-------
-; VARIABLES
-;----------
-LNK := "C:\shortcuts"
-X86 := "C:\Program Files (x86)"
-ALOCAL := "C:\Users\669385\AppData\Local"
-TCMD := "C:\totalcmd"
-;
-
 ; LAUNCH CHROME
 #w::
-run, "%X86%\Google\Chrome\Application\chrome.exe"
-WinActivate
+run, "c:\Users\Eri\AppData\Local\Google\Chrome\Application\chrome.exe"
 return
 
 ; LAUNCH TOTAL COMMANDER
 #q::
-Run, "%TCMD%\TOTALCMD64.EXE"
-WinActivate
-return
-
-; LAUNCH DISCORD
-#d::
-Run, C:\Users\669385\AppData\Local\Discord\Update.exe --processStart Discord.exe
-WinActivate
+Run, "c:\totalcmd\TOTALCMD.EXE"
 return
 
 ; LAUNCH WSL
 #z::
-Run, "%LNK%\Ubuntu.lnk"
-WinActivate
+Run, "c:\lnk\Ubuntu.lnk"
 return
 
 ; LAUNCH SNIPPING TOOL
 #s::
-Run, "%LNK%\Snipping Tool.lnk"
-WinActivate
+Run, "%windir%\system32\SnippingTool.exe"
 return
 
 ; LAUNCH NOTEPAD++
->!n::
-WinActivate
-Run, "%X86%\Notepad++\notepad++.exe"
-
-; SUSPEND
-!+Esc::
-Suspend
+#!n::
+Run, "c:\Program Files (x86)\Notepad++\notepad++.exe"
 return
 
 ; CLOSE
