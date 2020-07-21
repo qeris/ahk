@@ -1,80 +1,116 @@
-; LAUNCH CHROME
-#w::
-run, "c:\Users\Eri\AppData\Local\Google\Chrome\Application\chrome.exe"
-return
+;--------------------------------------------------------------------------------
+; SURFACE PRO 3 CONFIGURATION
+; *Errandur <https://github.com/Errandur?tab=repositories>
+;--------------------------------------------------------------------------------
+;
+;--------------------------------------------------------------------------------
+; DEFAULTS
+;--------------------------------------------------------------------------------
+;
+; LAUNCH CHROME |
+#f::Run Chrome
+;-------------
+;
+; LAUNCH SNIPPING TOOL |
+#s::Run SnippingTool
+;---------------------
+;
+; GOOGLE SEARCH |
+^+c::
+{
+ Send, ^c
+ Sleep 50
+ Run, http://www.google.com/search?q=%clipboard%
+ Return
+}
+;
+;-----------------------------------------------
 
-; LAUNCH TOTAL COMMANDER
-#q::
-Run, "c:\totalcmd\TOTALCMD.EXE"
-return
+; LAUNCH NOTEPAD++ |
+#!n::Run Notepad
 
-; LAUNCH WSL
-#z::
-Run, "c:\lnk\Ubuntu.lnk"
-return
+;------------------
 
-; LAUNCH SNIPPING TOOL
-#s::
-Run, "%windir%\system32\SnippingTool.exe"
-return
-
-; LAUNCH NOTEPAD++
-#!n::
-Run, "c:\Program Files (x86)\Notepad++\notepad++.exe"
-return
-
-; CLOSE
+; CLOSE |
 ^RButton::
-Send, !{F4}
-return
+{
+ Send, !{F4}
+ Return
+}
 
+;--------------------------------------------------------------------------------
 ; FOR TOTAL COMMANDER ONLY!
-;--------------------------
+;--------------------------------------------------------------------------------
 #IfWinActive ahk_class TTOTAL_CMD
 {
-; COPY
+; COPY |
 +LButton::
-Send, {F5}
-return
-
-; RENAME
-+RButton::
-Send, +{F6}
-return
-
-; CLOSE
-^RButton::
-Send, !{F4}
-return
+{
+ Send, {F5}
+ Return
 }
+;----------
 
+; RENAME |
++RButton::
+{
+ Send, +{F6}
+ Return
+}
+;-----------
+
+; CLOSE |v
+^RButton::
+{
+ Send, !{F4}
+ Return
+}
+;-----------
+
+;--------------------------------------------------------------------------------
 ; FOR CHROME ONLY!
-;-----------------
+;--------------------------------------------------------------------------------
 #IfWinActive ahk_class Chrome_WidgetWin_1
 {
-; NEW TAB
+; NEW TAB |
 +MButton::
-Send, ^t
-return
-
-; CLOSE TAB
-^RButton::
-Send, ^w
-return
-
-; RESTORE TAB
-+RButton::
-Send, ^t
-return
-
-; INCOGNITO
-^MButton::
-Send, ^+n
-return
+{
+ Send, ^t
+ Return
 }
+;-----------
 
+; CLOSE TAB |
+^RButton::
+{
+ Send, ^w
+ Return
+}
+;-----------
+
+; RESTORE TAB |
++RButton::
+{
+ Send, ^t
+ Return
+}
+;------------
+
+; INCOGNITO |
+^MButton::
+{
+ Send, ^+n
+ Return
+}
+;----------
+
+;--------------------------------------------------------------------------------
 ; KEYS
-;-------
+;--------------------------------------------------------------------------------
+; + - Shift Modifier
+; ^ - Ctrl Modifier
+; # - Windows
+; ! - Alt Modifier
 ; LBUTTON - Left Click
 ; RBUTTON - Right Click
 ; MBUTTON - Scroll Click
@@ -94,7 +130,5 @@ return
 ; RShift - Right Shift
 ; LCtrl - Left Control
 ; RCtrl - Right Control
-; + - Shift Modifier
-; ^ - Ctrl Modifier
-; # - Windows
-; ! - Alt Modifier
+
+;--------------------------------------------------------------------------------
