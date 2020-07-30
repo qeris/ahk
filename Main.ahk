@@ -44,7 +44,7 @@
 #IfWinActive ahk_class TTOTAL_CMD
 {
 	; COPY |
-	+LButton::
+	+RButton::
 	{
 		Send, {F5}
 		Return
@@ -52,7 +52,7 @@
 	;----------
 
 	; RENAME |
-	+RButton::
+	^MButton::
 	{
 		Send, +{F6}
 		Return
