@@ -1,136 +1,143 @@
-;--------------------------------------------------------------------------------
-; SURFACE PRO 3 CONFIGURATION
-; *Errandur <https://github.com/Errandur?tab=repositories>
-;--------------------------------------------------------------------------------
-;
-;--------------------------------------------------------------------------------
-; DEFAULTS
-;--------------------------------------------------------------------------------
-;
-; LAUNCH CHROME |
-#f::Run Chrome
-;-------------
-;
-; LAUNCH SNIPPING TOOL |
-#s::Run SnippingTool
-;---------------------
-;
-; GOOGLE SEARCH |
-^+c::
-{
-	Send, ^c
-	Sleep 50
-	Run, http://www.google.com/search?q=%clipboard%
-	Return
-}
-;
-;-----------------------------------------------
+;-----------------------------------------------------------------;
+;---------------------HOGWARTS CONFIGURATION----------------------;
+;*Errandur <https://github.com/Errandur?tab=repositories>;
+;-----------------------------------------------------------------;
 
-; LAUNCH NOTEPAD++ |
-#!n::Run Notepad
+;-----------------------------------------------------------------;
+;-----------------DEFAULT CONFIGURATION SETTINGS------------------;
+;-----------------------------------------------------------------;
+		; LAUNCH CHROME |
+			#f::Run Chrome
 
-;------------------
+		; LAUNCH SNIPPING TOOL |
+			#s::Run SnippingTool
 
-; CLOSE |
-^RButton::
-{
-	Send, !{F4}
-	Return
-}
+		; LAUNCH NOTEPAD++ |
+			#!n::Run Notepad
 
-;--------------------------------------------------------------------------------
-; FOR TOTAL COMMANDER ONLY!
-;--------------------------------------------------------------------------------
-#IfWinActive ahk_class TTOTAL_CMD
-{
-	; COPY |
-	+RButton::
-	{
-		Send, {F5}
-		Return
-	}
-	;----------
+		; CLOSE |
+			^RButton::!F4
+			
+;-----------------------------------------------------------------;
+;-------------------------FUNCTION KEYS---------------------------;
+;-----------------------------------------------------------------;
+	; F1 - GOOGLE SEARCH |
+		+F1::
+			{
+				Send, ^c
+				Sleep 50
+				Run, http://www.google.com/search?q=%clipboard%
+				Return
+			}
+		
+	; F2 - LAUNCH SNIPPINGTOOL |
+		+F2::Run SnippingTool
+		return
+		
+	; F3 - LAUNCH NOTEPAD++ |
+		+F3:: Run Notepad++
+		return
+	
+	; F4 -  |
+		+F4:: ;
+		return
+		
+	; F5 -  |
+		+F5:: ;
+		return
+		
+	; F6 -  |
+		+F6:: ;
+		return
+		
+	; F7 -  |
+		+F7:: ;
+		return
+		
+	; F8 -  |
+		+F8:: ;
+		return
+		
+	; F9 -  |
+		+F9:: ;
+		return
+		
+	; F10 -  |
+		+F10:: ;
+		return
+		
+	; F11 -  |
+		+F11:: ;
+		return
+		
+	; F12 -  |
+		+F12:: ;
+		return
+	
+;-----------------------------------------------------------------;
+;-------------------FOR TOTAL COMMANDER ONLY!---------------------;
+;-----------------------------------------------------------------;
+			#IfWinActive ahk_exe totalcmd.exe
+			{
+				; COPY |
+					+RButton::
+					{
+						Send, {F5}
+						Return
+					}
 
-	; RENAME |
-	^MButton::
-	{
-		Send, +{F6}
-		Return
-	}
-	;-----------
+				; RENAME |
+					^MButton::
+					{
+						Send, +{F6}
+						Return
+					}
 
-	; CLOSE |v
-	^RButton::
-	{
-		Send, !{F4}
-		Return
-	}
-	;-----------
-}
-;
-;--------------------------------------------------------------------------------
-; FOR CHROME ONLY!
-;--------------------------------------------------------------------------------
-#IfWinActive ahk_class Chrome_WidgetWin_1
-{
-	; NEW TAB |
-	+MButton::
-	{
-		Send, ^t
-		Return
-	}
-	;-----------
+				; CLOSE |
+					^RButton::!F4
+			}
 
-	; CLOSE TAB |
-	^RButton::
-	{
-		Send, ^w
-		Return
-	}
-	;-----------
+;--------------------------------------------------------;
+;--------------------FOR CHROME ONLY!--------------------;
+;--------------------------------------------------------;
+		#IfWinActive ahk_exe Chrome.exe
+		{
+			; NEW TAB |
+			+RButton::^t
+			
+			; CLOSE TAB |
+			^RButton::^w
+			
+			; NEW TAB
+			+MButton::^t
+			
+			; RETORE TAB
+			^MButton::^+t
+		}
 
-	; RESTORE TAB |
-	+RButton::
-	{
-		Send, ^t
-		Return
-	}
-	;------------
-
-	; INCOGNITO |
-	^MButton::
-	{
-		Send, ^+n
-		Return
-	}
-	;----------
-}
-
-;--------------------------------------------------------------------------------
-; KEYS
-;--------------------------------------------------------------------------------
-; + - Shift Modifier
-; ^ - Ctrl Modifier
-; # - Windows
-; ! - Alt Modifier
-; LBUTTON - Left Click
-; RBUTTON - Right Click
-; MBUTTON - Scroll Click
-; WHEELUP - Scroll Up
-; WHEELDOWN - Scroll Down
-; CapsLock - CapsLock
-; Space - Space
-; Tab - Tab
-; Enter - Enter
-; Esc - Escape
-; Backspace - Backspace
-; LWin - Left Windows
-; RWin - Right Windows
-; LAlt - Left Alt
-; RAlt - Right Alt
-; LShift - Left Shift
-; RShift - Right Shift
-; LCtrl - Left Control
-; RCtrl - Right Control
-
-;--------------------------------------------------------------------------------
+;-----------------------KEYS-----------------------------;
+;--------------------------------------------------------;
+;--------------------+ - Shift---------------------------;
+;--------------------^ - Ctrl----------------------------;
+;--------------------# - Windows-------------------------;
+;--------------------! - Alt-----------------------------;
+;--------------LBUTTON - Left Click----------------------;
+;--------------RBUTTON - Right Click---------------------;
+;--------------MBUTTON - Scroll Click--------------------;
+;--------------WHEELUP - Scroll Up-----------------------;
+;------------WHEELDOWN - Scroll Down---------------------;
+;-------------CapsLock - CapsLock------------------------;
+;----------------Space - Space---------------------------;
+;------------------Tab - Tab-----------------------------;
+;----------------Enter - Enter---------------------------;
+;------------------Esc - Escape--------------------------;
+;------------Backspace - Backspace-----------------------;
+;-----------------LWin - Left Windows--------------------;
+;-----------------RWin - Right Windows-------------------;
+;-----------------LAlt - Left Alt------------------------;
+;-----------------RAlt - Right Alt-----------------------;
+;---------------LShift - Left Shift----------------------;
+;---------------RShift - Right Shift---------------------;
+;----------------LCtrl - Left Control--------------------;
+;----------------RCtrl - Right Control-------------------;
+;--------------------------------------------------------;
