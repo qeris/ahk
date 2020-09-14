@@ -22,12 +22,6 @@ return
 w::Esc
 return
 
-WheelUp::SendInput, Tab
-return
-
-WheelDown::SendInput, Tab
-return
-
 MButton::Tab
 return
 
