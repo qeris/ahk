@@ -25,6 +25,14 @@ return
 MButton::Tab
 return
 
+WheelDown::
+Send Esc
+return
+
+WheelUp::
+Send Esc
+return
+
 `::Suspend
 
 +`::ExitApp

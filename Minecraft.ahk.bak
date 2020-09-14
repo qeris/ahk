@@ -10,19 +10,37 @@ return
 f::d
 return
 
-a::r
+a::Ctrl
 return
 
-g::q
+Alt::e
 return
 
-RButton::q
+r::1
 return
 
-w::Esc
+w::2
 return
 
-MButton::Tab
+t::3
+return
+
+2::4
+return
+
+3::5
+return
+
+4::6
+return
+
+z::7
+return
+
+x::8
+return
+
+c::9
 return
 
 `::Suspend

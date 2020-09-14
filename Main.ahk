@@ -18,6 +18,10 @@
 		; CLOSE |
 			^RButton::!F4
 			
+		; CUSTOM GOOGLE SEARCH |
+			^+z::
+			
+
 ;-----------------------------------------------------------------;
 ;-------------------------FUNCTION KEYS---------------------------;
 ;-----------------------------------------------------------------;
@@ -39,8 +43,13 @@
 		return
 	
 	; F4 -  |
-		+F4:: ;
-		return
+		+F4::
+		{
+			InputBox, GOOGLESEARCH
+			if GOOGLESEARCH <> ""
+					Run https://www.google.com/search?q=%GOOGLESEARCH%
+			return
+		}
 		
 	; F5 -  |
 		+F5:: ;
@@ -74,24 +83,20 @@
 		+F12:: ;
 		return
 	
+	; LAUNCH MINECRAFT CUSTOM KEYBINDS
+	^+m::Run "c:\ahk\Minecraft.ahk"
+	return
+	
 ;-----------------------------------------------------------------;
 ;-------------------FOR TOTAL COMMANDER ONLY!---------------------;
 ;-----------------------------------------------------------------;
 			#IfWinActive ahk_exe totalcmd.exe
 			{
 				; COPY |
-					+RButton::
-					{
-						Send, {F5}
-						Return
-					}
+					+RButton::F5
 
 				; RENAME |
-					^MButton::
-					{
-						Send, +{F6}
-						Return
-					}
+					^MButton::+F6
 
 				; CLOSE |
 					^RButton::!F4
@@ -100,19 +105,23 @@
 ;--------------------------------------------------------;
 ;--------------------FOR CHROME ONLY!--------------------;
 ;--------------------------------------------------------;
-		#IfWinActive ahk_exe Chrome.exe
+		#IfWinActive ahk_exe chrome.exe
 		{
 			; NEW TAB |
 			+RButton::^t
+			return
 			
 			; CLOSE TAB |
 			^RButton::^w
+			return
 			
 			; NEW TAB
 			+MButton::^t
+			return
 			
 			; RETORE TAB
 			^MButton::^+t
+			return
 		}
 
 ;-----------------------KEYS-----------------------------;
