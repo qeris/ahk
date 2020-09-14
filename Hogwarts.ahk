@@ -6,16 +6,26 @@
 ;-----------------------------------------------------------------;
 ;-----------------DEFAULT CONFIGURATION SETTINGS------------------;
 ;-----------------------------------------------------------------;
-		; LAUNCH CHROME |
-			#f::Run Chrome
-			return
+	; LAUNCH CHROME |
+		#f::Run Chrome
+		return
 
-		; CLOSE |
-			^RButton::!F4
-			return
+	; CLOSE |
+		^RButton::!F4
+		return
 		
-		; PAUSE
+	; PAUSE
 		^+!`::Suspend
+	
+	; VOLUME CONTROL
+		#If MouseIsOver("ahk_class Shell_TrayWnd")
+		WheelUp::Send {Volume_Up}
+		WheelDown::Send {Volume_Down}
+
+	MouseIsOver(WinTitle) {
+		MouseGetPos,,, Win
+		return WinExist(WinTitle . " ahk_id " . Win)
+	}
 
 ;-----------------------------------------------------------------;
 ;-------------------------FUNCTION KEYS---------------------------;
@@ -25,24 +35,24 @@
 		{
 			InputBox, GOOGLESEARCH
 			if GOOGLESEARCH <> ""
-					Run https://www.google.com/search?q=%GOOGLESEARCH%
+			Run https://www.google.com/search?q=%GOOGLESEARCH%
 			return
 		}
 	
 ;-----------------------------------------------------------------;
 ;-------------------FOR TOTAL COMMANDER ONLY!---------------------;
 ;-----------------------------------------------------------------;
-			#IfWinActive ahk_exe totalcmd.exe
-			{
-				; COPY |
-					+RButton::F5
+		#IfWinActive ahk_exe totalcmd.exe
+		{
+			; COPY |
+				+RButton::F5
 
-				; RENAME |
-					^MButton::+F6
+			; RENAME |
+				^MButton::+F6
 
-				; CLOSE |
-					^RButton::!F4
-			}
+			; CLOSE |
+				^RButton::!F4
+		}
 
 ;--------------------------------------------------------;
 ;--------------------FOR CHROME ONLY!--------------------;
