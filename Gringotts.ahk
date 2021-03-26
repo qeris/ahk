@@ -28,7 +28,8 @@
 
 !e::
 {
-	Send, Ff$2tUr:)f1t5PUrh|m1Lw/w
+	Send, 
+
 	Return
 }
 
