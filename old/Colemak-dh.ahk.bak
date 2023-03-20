@@ -1,0 +1,66 @@
+; Custom Colemak Mod (ISO)
+; Author: Qeris
+; Version 3.0
+; Date: 2022-05-04
+
+menu, tray, icon, C:\Windows\system32\shell32.dll,74
+;Suspend
+#SingleInstance force
+
+; Hogwarts
+AppsKey & Home::Reload
+AppsKey & End::ExitApp
+; SP3
+#{Del}::Edit
+RAlt & Del::ExitApp
+RShift & Del::Reload
+; Anelda
+RShift & Media_Play_Pause::Reload
+RShift & Media_Stop::ExitApp
+
+;SC010::q
+;SC011::w
+SC012::f ;e
+SC013::p ;r
+SC014::g ;t
+SC015::j ;y
+SC016::l ;u
+SC017::u ;i
+SC018::y ;o
+SC019::; ;p
+
+;SC01E::a
+SC01F::r ;s
+SC020::s ;d
+SC021::t ;f
+SC022::d
+SC023::m
+SC024::n ;j
+SC025::e ;k
+SC026::i ;l
+SC027::o ;;
+
+;SC02c::z
+;SC02d::x
+;SC02e::c
+;~LControl & SC02e::send, ^{c} ;^c
+;SC02f::v
+;~LControl & SC02f::send, ^{v} ; ^v
+;SC030::b
+SC031::k ;n
+SC032::h
+
+; set Backspace to CapsLock key
+sc03a::backspace
+
+; |P|R|M|F|F| |F|F|M|R|P|
+; ----------- -----------
+; |q|w|e|r|t| |y|u|i|o|p|
+; |a|s|d|f|g| |h|j|k|l|;|
+; |z|x|c|v|b| |n|m|,|,|.|
+
+; |P|R|M|F|F| |F|F|M|R|P|
+; ----------- -----------
+; |q|w|f|p|g| |j|l|u|y|;|
+; |a|r|s|t|d| |m|n|e|i|o|
+; |z|x|c|v|b| |k|h|,|.|/|
